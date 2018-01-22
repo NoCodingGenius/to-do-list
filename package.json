@@ -1,0 +1,30 @@
+{
+  "name": "to-do-list",
+  "version": "1.0.0",
+  "description": "A simple to do list app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NoCodingGenius/to-do-list.git"
+  },
+  "author": "LaToya Williams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NoCodingGenius/to-do-list/issues"
+  },
+  "homepage": "https://github.com/NoCodingGenius/to-do-list#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "chai": "^4.1.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "method-override": "^2.3.10",
+    "mocha": "^5.0.0",
+    "nodemon": "^1.14.11",
+    "pg-promise": "^7.4.0"
+  }
+}
