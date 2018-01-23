@@ -9,10 +9,7 @@ const signUp = (user) => {
     RETURNING
       *
   `, [user.first_name, user.email, user.password])
-  .catch((error) => {
-    console.error({message: 'Error occured while executing users.signUp'})
-    throw error
-  })
+  .catch(console.log)
 };
 
 const signIn = (email, password) => {
@@ -23,10 +20,7 @@ const signIn = (email, password) => {
       email=$1
       password=$2
   `, [email, password])
-  .catch((error) => {
-    console.error({message: 'Error occured while executing users.signIn'})
-    throw error
-  })
+  .catch(console.log)
 }
 
 module.exports = {
