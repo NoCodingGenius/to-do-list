@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended:false }));
 
 app.use(methodOverride('_method'));
 
-app.use('/', routes)
+app.use('/', routes);
 
 const port = 3000;
 app.listen(port, () => {
