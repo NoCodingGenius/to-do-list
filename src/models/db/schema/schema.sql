@@ -1,7 +1,5 @@
 DROP TABLE IF EXISTS users CASCADE;
 DROP TABLE IF EXISTS todos CASCADE;
-DROP TABLE IF EXISTS users_todos CASCADE;
-DROP TABLE IF EXISTS completed_todos CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -14,9 +12,4 @@ CREATE TABLE todos (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
   item VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE users_todos (
-  user_id INTEGER REFERENCES users(id),
-  todo_item INTEGER REFERENCES todos(id)
 );
