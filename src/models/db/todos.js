@@ -1,18 +1,15 @@
 const db = require('./db');
 
-const addToDo = (todo) => {
+const addToDo = (user_id, item) => {
   return db.one(`
     INSERT INTO
-      todos (item)
+      todos (user_id, item)
     VALUES
-      ($1)
+      ($1, $2)
     RETURNING
       *
-  `[todos.item])
-  .catch((error) => {
-    console.error({message:'Error occurred with executing todos.addToDo'});
-    throw error
-  })
+  `[todos.user_id, todos.item])
+  .catch(console.log)
 };
 
 const deleteToDo = (todoId) => {
@@ -22,13 +19,35 @@ const deleteToDo = (todoId) => {
       WHERE
         id=$1
     `, [todoId])
-    .catch((error) => {
-      console.error({message:'Error occured with executing todos.deleteToDo'});
-      throw error
-    })
+    .catch(console.log)
+};
+
+const findToDo = (userId) => {
+  return db.any(`
+    SELECT
+      *
+    FROM
+      users_todos
+    WHERE
+      user_id=$1
+  `, [userId])
+  .catch(console.log)
+};
+
+const updateToDo = (item, id) => {
+  db.oneOrNone(`
+    UPDATE
+      todos
+    SET
+      item=$1
+    WHERE
+      id=$2
+  `, [item, id])
+  .catch(console.log)
 };
 
 module.exports = {
   addToDo,
-  deleteToDo
+  deleteToDo,
+  findToDo
 };
