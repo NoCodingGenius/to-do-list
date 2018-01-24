@@ -19,7 +19,8 @@ const create = (user) => {
 };
 
 const signUp = (user) => {
-    return encryptPassword(user.password).then((hash) => {
+    return encryptPassword(user.password)
+    .then((hash) => {
       user.password = hash
       return create(user);
     }).catch(console.log)
