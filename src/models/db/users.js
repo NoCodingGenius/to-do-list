@@ -44,6 +44,7 @@ const signIn = (email, password) => {
       if (!validUser) {
         throw new Error ('Invalid Username/Password')
       }
+      return validUser.id
     })
     .catch(console.log)
   });
