@@ -26,12 +26,12 @@ router.get('/signin', (request, response) => {
 router.post('/signin', (request, response) => {
   const { email, password } = request.body
   users.signIn(email, password)
-  .then((user) => {
-    if (!user) {
-      return response.send('Invalid Username/Password')
-    }
-      return response.redirect('/');
-  });
+    .then((user) => {
+      if (!user) {
+        return response.send('Invalid Username/Password')
+      }
+        return response.redirect('/');
+      });
 });
 
 module.exports = router;
