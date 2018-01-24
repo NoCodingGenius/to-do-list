@@ -2,19 +2,24 @@
 
 <h1>To Do List</h1>
 
-<form class="to-do-list" action="" method="PUT">
+<form class="to-do-list" action="/" method="PUT">
 
   <label for="item">To Do:</label>
-  <input type="text" name="item" required>
+  <input id="to-do-item" type="text" name="item" required>
 
-  <input type="submit" name="to-do-list-button" value="Submit">
+  <input id="add-to-do" type="submit" name="to-do-list-button" value="Submit">
 
 </form>
 
 <h2>List of To Dos:</h2>
 
 <ol>
-  <li> Example Text<br><input type="checkbox" name="to-do-list-item"> Complete</li>
+  <li> Example Text
+    <br>
+    <input type="checkbox" name="to-do-list-item"> Complete
+    <input type="Submit" name="edit-todo-button" value="Edit">
+    <input type="Submit" name="delete-todo-button" value="Delete">
+  </li>
 </ol>
 
 <%- include ../partials/footer.ejs %>
