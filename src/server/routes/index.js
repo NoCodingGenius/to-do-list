@@ -14,9 +14,9 @@ router.get('/signup', (request, response) => {
 
 router.post('/signup', (request, response) => {
   users.signUp(request.body)
-  .then((user) => {
-    response.redirect('/');
-  });
+    .then((user) => {
+      response.redirect('/');
+    });
 });
 
 router.get('/signin', (request, response) => {
