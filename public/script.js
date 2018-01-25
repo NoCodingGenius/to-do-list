@@ -3,7 +3,7 @@ console.log('~Sanity check!~');
 document.getElementById("add-to-do")
 .addEventListener('click', () => {
 
-  const user_id = document.getElementById("").value
+  const user_id = document.getElementById("userId").value
   const item = document.getElementById("to-do-item").value
 
   const myHeaders = new Headers();
