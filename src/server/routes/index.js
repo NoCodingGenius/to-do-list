@@ -4,6 +4,10 @@ const users = require('../../models/db/users');
 
 const router = require('express').Router();
 
+router.get('/', (request, response) => {
+  return response.render('todo/index')
+});
+
 router.get('/signup', (request, response) => {
   response.render('users/sign-up');
 });
@@ -26,7 +30,7 @@ router.post('/signin', (request, response) => {
       // if (!user) {
       //   return response.send('Invalid Username/Password')
       // }
-        return response.redirect(`/users/${userId}/todos`);
+        return response.redirect(`/`);
       });
 });
 
